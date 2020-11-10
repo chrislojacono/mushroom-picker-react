@@ -70,7 +70,7 @@ const mushrooms = [
     description:
       'They’ve got a distinctive taste that some people compare to sourdough bread, with slightly creamy and nutty flavors.',
     imgUrl:
-      'https://www.thespruceeats.com/thmb/D09kU8o6YZJncPAys_V-hZr-PbI=/2579x2579/smart/filters:no_upscale()/166262945-56a539383df78cf772870c45.jpg',
+      'https://hermitageoils.com/wp-content/uploads/2018/08/Porcini-Absolute-Chocolate-Scented.jpg',
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
