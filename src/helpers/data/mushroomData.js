@@ -168,8 +168,7 @@ const mushrooms = [
     name: 'Death Cap Mushrooms',
     description:
       'Perhaps the deadliest of all mushrooms, the death cap is found throughout Europe and closely resembles edible straw mushrooms and caesar’s mushrooms. Its heat-stable amatoxins withstand cooking temperatures and quickly damage cells throughout the body.',
-    imgUrl:
-      'https://cdn.mos.cms.futurecdn.net/X8g2aJhU9fxWyqSZefTNqR.jpg',
+    imgUrl: 'https://cdn.mos.cms.futurecdn.net/X8g2aJhU9fxWyqSZefTNqR.jpg',
     isMagic: false,
     isPoisonous: false,
     isDeadly: true,
@@ -226,4 +225,18 @@ const getTheMushrooms = () => mushrooms;
 
 const getTheBasket = () => basket;
 
-export default { getTheBasket, getTheMushrooms };
+const getNonMagic = () => {
+  const nonLethalMushrooms = [];
+  mushrooms.forEach((mushroom) => {
+    if (
+      mushroom.isDeadly === false
+      && mushroom.isPoisonous === false
+      && mushroom.isMagic === false
+    ) {
+      nonLethalMushrooms.push(mushroom);
+    }
+  });
+  return nonLethalMushrooms;
+};
+
+export default { getTheBasket, getTheMushrooms, getNonMagic };

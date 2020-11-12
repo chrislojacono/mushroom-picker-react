@@ -13,9 +13,25 @@ class App extends React.Component {
     const randomMushroom = this.state.mushrooms[
       Math.floor(Math.random() * this.state.mushrooms.length)
     ];
-    this.setState({
-      basket: this.state.basket.concat(randomMushroom),
-    });
+    if (
+      randomMushroom.isDeadly === false
+      && randomMushroom.isPoisonous === false
+      && randomMushroom.isMagic === false
+    ) {
+      this.setState({
+        basket: this.state.basket.concat(randomMushroom),
+      });
+    }
+    if (randomMushroom.isDeadly === true) {
+      this.setState({
+        basket: [],
+      });
+    }
+    if (randomMushroom.isMagic === true) {
+      this.setState({
+        basket: this.state.basket.concat(mushroomData.getNonMagic()),
+      });
+    }
   };
 
   render() {
@@ -26,9 +42,9 @@ class App extends React.Component {
     return (
       <div className='App'>
         <button onClick={buttonClick}>Pick A Mushroom</button>
-        <div className="mushBasketWrap">
-        <Forest mushrooms={mushrooms} />
-        <Basket basket={basket} />
+        <div className='mushBasketWrap'>
+          <Forest mushrooms={mushrooms} />
+          <Basket basket={basket} />
         </div>
       </div>
     );
