@@ -1,4 +1,5 @@
 import React from 'react';
+import MyNavbar from '../Navbar';
 import Forest from '../Forest';
 import Basket from '../Basket';
 import mushroomData from '../../helpers/data/mushroomData';
@@ -45,6 +46,7 @@ class App extends React.Component {
     };
     return (
       <div className='App'>
+        <MyNavbar basket={basket}/>
         <button onClick={buttonClick}>Pick A Mushroom</button>
         {youWin ? (<div className="youWinALert">
           <h1>YOU WIN!! YOU FOUND THE MAGIC MUSHROOM!!!!!!</h1>
