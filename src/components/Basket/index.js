@@ -8,11 +8,14 @@ export default class Basket extends Component {
 
     const { basket } = this.props;
     return (
-      <div className='mushroomWrap'>
-        {basket.map((mushroom) => (
-          <Mushroom key={generateKey(randomNum())} mushrooms={mushroom} />
-        ))}
-      </div>
+      <React.Fragment>
+        {/* <h2 className='basketTitle'>Your Basket!</h2> */}
+        <div className='mushroomWrap'>
+          {basket.map((mushroom) => (
+            <Mushroom key={generateKey(randomNum())} mushrooms={mushroom} />
+          ))}
+        </div>
+      </React.Fragment>
     );
   }
 }

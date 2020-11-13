@@ -7,6 +7,7 @@ class App extends React.Component {
   state = {
     mushrooms: mushroomData.getTheMushrooms(),
     basket: mushroomData.getTheBasket(),
+    youWin: false,
   };
 
   pickAMushroom = () => {
@@ -20,28 +21,34 @@ class App extends React.Component {
     ) {
       this.setState({
         basket: this.state.basket.concat(randomMushroom),
+        youWin: false,
       });
     }
     if (randomMushroom.isDeadly === true) {
       this.setState({
         basket: [],
+        youWin: false,
       });
     }
     if (randomMushroom.isMagic === true) {
       this.setState({
         basket: this.state.basket.concat(mushroomData.getNonMagic()),
+        youWin: true,
       });
     }
   };
 
   render() {
-    const { mushrooms, basket } = this.state;
+    const { mushrooms, basket, youWin } = this.state;
     const buttonClick = () => {
       this.pickAMushroom();
     };
     return (
       <div className='App'>
         <button onClick={buttonClick}>Pick A Mushroom</button>
+        {youWin ? (<div className="youWinALert">
+          <h1>YOU WIN!! YOU FOUND THE MAGIC MUSHROOM!!!!!!</h1>
+        </div>) : <></>}
         <div className='mushBasketWrap'>
           <Forest mushrooms={mushrooms} />
           <Basket basket={basket} />

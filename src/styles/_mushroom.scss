@@ -2,13 +2,15 @@
     width: 20%;
     margin: 2px;
     height: 20%;
+    padding: 0;
 }
 
 .mushroomWrap{
     width: 100%;
     display: flex;
     flex-flow: row wrap;
-    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 .mushroomText{
     width: 100%;
@@ -22,8 +24,6 @@
 }
 .mushBasketWrap{
     display: flex;
+    justify-content: center;
 
-}
-.mushroomName{
-    // white-space: nowrap;
 }
