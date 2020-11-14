@@ -1,18 +1,18 @@
 import React from 'react';
 import { useAlert } from 'react-alert';
 
-const App = (props) => {
+const Alert = (props) => {
   const alert = useAlert();
 
   return (
-    <button
+    <button className="btn btn-outline-info"
       onClick={() => {
         alert.show(`Oh look, a ${props.recentMushroom}`);
       }}
     >
-      Show Alert
+      Show Most Recent Mushroom Picked
     </button>
   );
 };
 
-export default App;
+export default Alert;

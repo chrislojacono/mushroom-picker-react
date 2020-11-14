@@ -11,7 +11,6 @@ class App extends React.Component {
     basket: mushroomData.getTheBasket(),
     youWin: false,
     recentMushroom: '',
-    test: 'Heyooo',
   };
 
   pickAMushroom = () => {
@@ -60,7 +59,7 @@ class App extends React.Component {
       <div className='App'>
         <MyNavbar basket={basket}/>
         <Alert recentMushroom={recentMushroom}/>
-        <button onClick={buttonClick}>Pick A Mushroom</button>
+        <button className="btn btn-success" onClick={buttonClick}>Pick A Mushroom</button>
         {youWin ? (<div className="youWinALert">
           <h1>YOU WIN!! YOU FOUND THE MAGIC MUSHROOM!!!!!!</h1>
         </div>) : <></>}

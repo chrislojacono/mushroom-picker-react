@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { transitions, positions, Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
 import './styles/index.scss';
+import 'semantic-ui-css/semantic.min.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
