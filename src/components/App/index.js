@@ -1,8 +1,7 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from '../../helpers/Routes';
 import MyNavbar from '../Navbar';
-import Alert from '../Alert';
-import Forest from '../Forest';
-import Basket from '../Basket';
 import mushroomData from '../../helpers/data/mushroomData';
 
 class App extends React.Component {
@@ -52,21 +51,17 @@ class App extends React.Component {
       youWin,
       recentMushroom,
     } = this.state;
-    const buttonClick = () => {
-      this.pickAMushroom();
-    };
     return (
       <div className='App'>
-        <MyNavbar basket={basket}/>
-        <Alert recentMushroom={recentMushroom}/>
-        <button className="btn btn-success" onClick={buttonClick}>Pick A Mushroom</button>
+        <Router>
+        <MyNavbar basket={basket} recentMushroom={recentMushroom} pickAMushroom={this.pickAMushroom}/>
+        <Routes mushrooms={mushrooms} basket={basket}/>
         {youWin ? (<div className="youWinALert">
           <h1>YOU WIN!! YOU FOUND THE MAGIC MUSHROOM!!!!!!</h1>
         </div>) : <></>}
         <div className='mushBasketWrap'>
-          <Forest mushrooms={mushrooms} />
-          <Basket basket={basket} />
         </div>
+        </Router>
       </div>
     );
   }

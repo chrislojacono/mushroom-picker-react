@@ -5,7 +5,7 @@ const Alert = (props) => {
   const alert = useAlert();
 
   return (
-    <button className="btn btn-outline-info"
+    <button className="btn btn-outline-info mr-3"
       onClick={() => {
         alert.show(`Oh look, a ${props.recentMushroom}`);
       }}
