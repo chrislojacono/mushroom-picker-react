@@ -59,7 +59,7 @@ class App extends React.Component {
     return (
       <div className='App'>
         <MyNavbar basket={basket}/>
-        <Alert props={this.state.test}/>
+        <Alert recentMushroom={recentMushroom}/>
         <button onClick={buttonClick}>Pick A Mushroom</button>
         {youWin ? (<div className="youWinALert">
           <h1>YOU WIN!! YOU FOUND THE MAGIC MUSHROOM!!!!!!</h1>

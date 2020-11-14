@@ -7,7 +7,7 @@ const App = (props) => {
   return (
     <button
       onClick={() => {
-        alert.show(`Oh look, a ${props}`);
+        alert.show(`Oh look, a ${props.recentMushroom}`);
       }}
     >
       Show Alert
