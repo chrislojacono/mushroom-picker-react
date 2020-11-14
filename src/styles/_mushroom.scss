@@ -1,21 +1,28 @@
 .mushroomCard{
-    width: 10%;
-    margin: 10px;
-    height: 30%;
+    width: 30%;
+    margin: 0;
+    height: 300px;
+    padding: 0;
 }
 
 .mushroomWrap{
     width: 100%;
     display: flex;
     flex-flow: row wrap;
-    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 .mushroomText{
-    font-size: 8%;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
 }
 .cardImage{
     height:100px;
     background-size: cover;
     background-position: center;
+}
+.mushBasketWrap{
+  display: flex;
+
 }
