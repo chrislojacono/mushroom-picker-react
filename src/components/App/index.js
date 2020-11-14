@@ -1,5 +1,6 @@
 import React from 'react';
 import MyNavbar from '../Navbar';
+import Alert from '../Alert';
 import Forest from '../Forest';
 import Basket from '../Basket';
 import mushroomData from '../../helpers/data/mushroomData';
@@ -9,6 +10,8 @@ class App extends React.Component {
     mushrooms: mushroomData.getTheMushrooms(),
     basket: mushroomData.getTheBasket(),
     youWin: false,
+    recentMushroom: '',
+    test: 'Heyooo',
   };
 
   pickAMushroom = () => {
@@ -23,30 +26,40 @@ class App extends React.Component {
       this.setState({
         basket: this.state.basket.concat(randomMushroom),
         youWin: false,
+        recentMushroom: randomMushroom.name,
       });
     }
     if (randomMushroom.isDeadly === true) {
       this.setState({
         basket: [],
         youWin: false,
+        recentMushroom: randomMushroom.name,
       });
     }
     if (randomMushroom.isMagic === true) {
       this.setState({
         basket: this.state.basket.concat(mushroomData.getNonMagic()),
         youWin: true,
+        recentMushroom: randomMushroom.name,
       });
     }
+    console.warn(this.state.recentMushroom);
   };
 
   render() {
-    const { mushrooms, basket, youWin } = this.state;
+    const {
+      mushrooms,
+      basket,
+      youWin,
+      recentMushroom,
+    } = this.state;
     const buttonClick = () => {
       this.pickAMushroom();
     };
     return (
       <div className='App'>
         <MyNavbar basket={basket}/>
+        <Alert props={this.state.test}/>
         <button onClick={buttonClick}>Pick A Mushroom</button>
         {youWin ? (<div className="youWinALert">
           <h1>YOU WIN!! YOU FOUND THE MAGIC MUSHROOM!!!!!!</h1>
