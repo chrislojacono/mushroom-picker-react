@@ -41,7 +41,6 @@ class App extends React.Component {
         recentMushroom: randomMushroom.name,
       });
     }
-    console.warn(this.state.recentMushroom);
   };
 
   render() {
