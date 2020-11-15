@@ -9,6 +9,7 @@ export default class Basket extends Component {
     const { basket } = this.props;
     return (
       <React.Fragment>
+        {basket.length === 0 && <h1>No Mushrooms in Your Basket Yet!</h1>}
         <div className='mushroomWrap'>
           {basket.map((mushroom) => (
             <Mushroom key={generateKey(randomNum())} mushrooms={mushroom} />

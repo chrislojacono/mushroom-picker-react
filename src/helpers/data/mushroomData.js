@@ -5,7 +5,7 @@ const mushrooms = [
     description:
       'Button mushrooms are also called baby mushrooms or white mushrooms.',
     imgUrl:
-      'https://grocycle.com/wp-content/uploads/2019/04/Growing-Button-Mushrooms-1024x512.jpg',
+      'https://goodeggs2.imgix.net/product_photos/LqZVvgoTtKUcNuKgPxLW_p9MJXXLkQTWA6S00j2DR_jmseGhEy-tm8FssZRSiV8qOROVghhW2GtLBBhrC9MMg.jpg?w=840&h=525&fm=jpg&q=80&fit=crop',
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
