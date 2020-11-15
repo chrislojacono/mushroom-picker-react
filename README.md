@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# The Mushroom Picker
+This was a bonus assignment while learning react to make a website where you could pick random mushrooms, they would be added to you basket and different actions would occur depending if the mushrooms were deadly, psychoactive or edible.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The Motivation
+I chose to do this extra assignment to become more comfortable changing state and using props with react. I got to mess around with hooks and using semantic UI for react which was new and I really enjoyed. This was one of our first projects in react so it was fun to get to use all the features that React.js has to offer. I also got to plug in react router into this project and test out what we had learned in class.
 
-## Available Scripts
+## Build Status
+[![Netlify Status](https://api.netlify.com/api/v1/badges/38c4f931-fa5c-4192-9dac-779a7cf65324/deploy-status)](https://app.netlify.com/sites/mushroom-picker/deploys)
 
-In the project directory, you can run:
+## Code Style
+Im using eslintrc and React.strictmode
 
-### `npm start`
+## Screenshots
+![screencapture-localhost-3000-2020-11-15-10_06_56](https://user-images.githubusercontent.com/66916708/99190280-40d96c80-272b-11eb-8647-5eb18e7ff0bd.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Tech Framework
+React.js
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Code Example
+```
+  pickAMushroom = () => {
+    const randomMushroom = this.state.mushrooms[
+      Math.floor(Math.random() * this.state.mushrooms.length)
+    ];
+    if (
+      randomMushroom.isDeadly === false
+      && randomMushroom.isPoisonous === false
+      && randomMushroom.isMagic === false
+    ) {
+      this.setState({
+        basket: this.state.basket.concat(randomMushroom),
+        youWin: false,
+        recentMushroom: randomMushroom.name,
+      });
+    }
+    if (randomMushroom.isDeadly === true) {
+      this.setState({
+        basket: [],
+        youWin: false,
+        recentMushroom: randomMushroom.name,
+      });
+    }
+    if (randomMushroom.isMagic === true) {
+      this.setState({
+        basket: this.state.basket.concat(mushroomData.getNonMagic()),
+        youWin: true,
+        recentMushroom: randomMushroom.name,
+      });
+    }
+  };
+  ```
+  ## Deployed Site
+  [Netlify Link](https://mushroom-picker.netlify.app/)
+  
