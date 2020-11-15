@@ -26,3 +26,13 @@
   display: flex;
 
 }
+.image{
+    object-fit: cover;
+    img{
+        width: 100%;
+        height: 80%;
+    }
+}
+.mushCard{
+    height:100%;
+}

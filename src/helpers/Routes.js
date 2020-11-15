@@ -9,6 +9,7 @@ export default function Routes({ mushrooms, basket }) {
       <Route exact path='/' component={() => <Forest mushrooms={mushrooms}/>} />
       <Route exact path='/forest' component={() => <Forest mushrooms={mushrooms} />} />
       <Route exact path='/basket' component={() => <Basket basket={basket}mushrooms={mushrooms}/>} />
+      <Route component={() => <Forest mushrooms={mushrooms}/>}/>
     </Switch>
   );
 }

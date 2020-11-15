@@ -54,12 +54,10 @@ class App extends React.Component {
       <div className='App'>
         <Router>
         <MyNavbar basket={basket} recentMushroom={recentMushroom} pickAMushroom={this.pickAMushroom}/>
-        <Routes mushrooms={mushrooms} basket={basket}/>
         {youWin ? (<div className="youWinALert">
           <h1>YOU WIN!! YOU FOUND THE MAGIC MUSHROOM!!!!!!</h1>
         </div>) : <></>}
-        <div className='mushBasketWrap'>
-        </div>
+        <Routes mushrooms={mushrooms} basket={basket}/>
         </Router>
       </div>
     );
